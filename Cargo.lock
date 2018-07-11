@@ -64,6 +64,7 @@ dependencies = [
 name = "docker-healthcheck"
 version = "0.1.0"
 dependencies = [
+ "futures 0.1.22 (registry+https://github.com/rust-lang/crates.io-index)",
  "http 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper 0.12.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "rust_docker 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
