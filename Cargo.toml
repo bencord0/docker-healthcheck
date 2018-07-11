@@ -1,0 +1,6 @@
+[package]
+name = "docker-healthcheck"
+version = "0.1.0"
+authors = ["Ben Cordero <bencord0@condi.me>"]
+
+[dependencies]
