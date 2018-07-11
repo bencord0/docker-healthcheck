@@ -1,15 +1,16 @@
-extern crate docker;
 extern crate hyper;
 extern crate http;
+extern crate rust_docker;
 
-use docker::Docker;
 use http::{Request, Response, StatusCode};
 use hyper::{Body, Server};
 use hyper::rt::Future;
 use hyper::service::service_fn_ok;
+use rust_docker::api::version::Version;
+use rust_docker::DockerClient;
 
 fn is_docker_ok() -> bool {
-    let mut docker = match Docker::connect("unix:///run/docker.sock") {
+    let docker = match DockerClient::new("unix:///run/docker.sock") {
         Ok(d) => d,
         Err(_) => {
             println!("docker connect");
@@ -17,7 +18,7 @@ fn is_docker_ok() -> bool {
         },
     };
 
-    return match docker.get_system_info() {
+    return match docker.get_version_info() {
         Ok(_) => true,
         Err(e) => {
             println!("docker info: {}", e);
