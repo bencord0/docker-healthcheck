@@ -6,4 +6,4 @@ authors = ["Ben Cordero <bencord0@condi.me>"]
 [dependencies]
 rust_docker = "0.1"
 http = "0.1"
-hyper = "0.12"
+hyper = "0.14"
